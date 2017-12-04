@@ -18,4 +18,11 @@ return [
         'name' => 'Task',
         'button' => 'Thêm',
     ],
+
+    'display' => [
+        'title' => 'Danh sách Task',
+        'table' => [
+            'name' => 'Task',
+        ],
+    ],
 ];

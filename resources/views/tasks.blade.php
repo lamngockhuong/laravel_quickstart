@@ -29,6 +29,35 @@
                     {!! Form::close() !!}
                 </div>
             </div>
+            <!-- Current Tasks -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    @lang('task.display.title')
+                </div>
+                <div class="panel-body">
+                    <table class="table table-striped task-table">
+                        <!-- Table Headings -->
+                        <thead>
+                        <th>@lang('task.display.table.name')</th>
+                        <th>&nbsp;</th>
+                        </thead>
+                        <!-- Table Body -->
+                        <tbody>
+                            @foreach ($tasks as $task)
+                                <tr>
+                                    <!-- Task Name -->
+                                    <td class="table-text">
+                                        <div>{{ $task->name }}</div>
+                                    </td>
+                                    <td>
+                                        <!-- TODO: Delete Button -->
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 @endsection
