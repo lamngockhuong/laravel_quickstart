@@ -9,7 +9,6 @@
     {!! Html::script('js/app.js') !!}
     {!! Html::style('css/app.css') !!}
     {!! Html::style('css/style.css') !!}
-
 </head>
 <body id="app-layout">
 <nav class="navbar navbar-default">

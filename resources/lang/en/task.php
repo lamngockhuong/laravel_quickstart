@@ -18,4 +18,11 @@ return [
         'name' => 'Task',
         'button' => 'Add Task',
     ],
+
+    'display' => [
+        'title' => 'Current Tasks',
+        'table' => [
+            'name' => 'Task',
+        ],
+    ],
 ];
