@@ -22,11 +22,26 @@ class TaskController extends Controller
         $task->name = $request->name;
 
         if ($task->save()) {
-            $message = trans('task.message.crsuccessnoty', ['Name' => "{$task->name}"]);
+            $message = trans('task.message.crsuccessnoty', ['name' => $task->name]);
 
-            return redirect()->route('task.index')->with('success_message', $message);
-        } else {
-            return redirect()->route('task.index');
+            return redirect()->route('task.index')->with('create_success_message', $message);
         }
+
+        $message = trans('task.message.crerrornoty', ['name' => $task->name]);
+
+        return redirect()->route('task.index')->with('create_error_message', $message);
+    }
+
+    public function destroy(Task $task)
+    {
+        if ($task->delete()) {
+            $message = trans('task.message.dlsuccessnoty', ['name' => $task->name]);
+
+            return redirect()->route('task.index')->with('delete_success_message', $message);
+        }
+
+        $message = trans('task.message.dlerrornoty', ['name' => $task->name]);
+
+        return redirect()->route('task.index')->with('delete_error_message', $message);
     }
 }

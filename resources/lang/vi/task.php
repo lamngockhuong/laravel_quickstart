@@ -10,7 +10,11 @@ return [
     'message' => [
         'crerror' => 'Có lỗi xảy ra!',
         'crsuccess' => 'Xin chúc mừng',
-        'crsuccessnoty' => ':Name được tạo thành công',
+        'crsuccessnoty' => ':name được tạo thành công',
+        'crerror' => 'Lỗi!',
+        'dlerrornoty' => 'Task xóa không thành công',
+        'dlsuccess' => 'Thành công!',
+        'dlsuccessnoty' => 'Task xóa thành công',
     ],
 
     'create' => [
@@ -24,5 +28,10 @@ return [
         'table' => [
             'name' => 'Task',
         ],
+    ],
+
+    'delete' => [
+        'button' => 'Delete',
+        'confirm' => 'Bạn có chắc muốn xóa?',
     ],
 ];
