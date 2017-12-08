@@ -15,7 +15,12 @@
  * Show Task Dashboard
  */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'TaskController@index');
 
+/**
+ * Add New Task
+ */
+
+Route::resource('task', 'TaskController', ['only' => [
+    'index', 'destroy', 'store',
+]]);

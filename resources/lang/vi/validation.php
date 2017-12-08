@@ -101,8 +101,8 @@ return [
 
     'custom' => [
         'name' => [
-            'required' => 'The name field is required',
-            'max' => 'Max 100 words',
+            'required' => 'Không được để trống',
+            'max' => 'Tối đa 100 ký tự',
         ],
     ],
 
