@@ -2,15 +2,14 @@
 @section('content')
     <div class="container">
         <div class="col-sm-offset-2 col-sm-8">
+            <!-- Display Validation Errors -->
+            @include('common.message')
             <div class="panel panel-default">
                 <div class="panel-heading">
                     @lang('task.create.title')
                 </div>
                 <!-- Bootstrap Boilerplate... -->
                 <div class="panel-body">
-                    <!-- Display Validation Errors -->
-                    @include('common.errors')
-                    @include('common.success')
                     <!-- New Task Form -->
                     {!! Form::open(['route' => 'task.index', 'class' => 'form-horizontal']) !!}
                     <!-- Task Name -->
@@ -38,8 +37,8 @@
                     <table class="table table-striped task-table">
                         <!-- Table Headings -->
                         <thead>
-                        <th>@lang('task.display.table.name')</th>
-                        <th>&nbsp;</th>
+                            <th>@lang('task.display.table.name')</th>
+                            <th>&nbsp;</th>
                         </thead>
                         <!-- Table Body -->
                         <tbody>
@@ -50,7 +49,16 @@
                                         <div>{{ $task->name }}</div>
                                     </td>
                                     <td>
-                                        <!-- TODO: Delete Button -->
+                                        {!! Form::open(['route' => ['task.destroy', 'id' => $task->id]]) !!}
+                                            {{ method_field('DELETE') }}
+                                            {!! Form::button('<i class="fa fa-trash"></i> ' . trans('task.delete.button'),
+                                                [
+                                                    'class' => 'btn btn-danger delete-button',
+                                                    'type' => 'submit',
+                                                    'data-mes-confirm' => trans('task.delete.confirm'),
+                                                ])
+                                            !!}
+                                        {!! Form::close() !!}
                                     </td>
                                 </tr>
                             @endforeach

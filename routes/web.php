@@ -18,7 +18,7 @@
 Route::get('/', 'TaskController@index');
 
 /**
- * Add New Task
+ * Task Route
  */
 
 Route::resource('task', 'TaskController', ['only' => [

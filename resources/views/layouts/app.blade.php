@@ -7,6 +7,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@lang('task.title')</title>
     {!! Html::script('js/app.js') !!}
+    {!! Html::script('js/custom.js') !!}
     {!! Html::style('css/app.css') !!}
     {!! Html::style('css/style.css') !!}
 </head>
